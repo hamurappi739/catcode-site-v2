@@ -54,7 +54,8 @@ const earPaths = {
 const poses = [
   ["cat-idle-follow-v2.svg", "cat-misty-idle.svg", "cat-idle-follow-v2", "idle-animated"],
   ["cat-idle-follow-v2.svg", "cat-misty-purring.svg", "cat-idle-follow-v2", "purring"],
-  ["cat-idle-follow-v2.svg", "cat-misty-sleep.svg", "cat-idle-follow-v2", "idle-animated"],
+  ["cat-idle-follow-v2.svg", "cat-misty-sleep.svg", "cat-idle-follow-v2", "idle-sleep"],
+  ["cat-idle-follow-v2.svg", "cat-misty-wake.svg", "cat-idle-follow-v2", "idle-sleep-return"],
   ["cat-idle-follow-v2.svg", "cat-misty-attention.svg", "cat-idle-follow-v2", "idle-animated"],
   ["press-left.svg", "cat-misty-press-left.svg", "press-left", ""],
   ["press-right.svg", "cat-misty-press-right.svg", "press-right", ""],

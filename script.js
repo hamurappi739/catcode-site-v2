@@ -11,6 +11,7 @@
     idle: "assets/cat-misty-idle.svg",
     purring: "assets/cat-misty-purring.svg",
     sleep: "assets/cat-misty-sleep.svg",
+    wake: "assets/cat-misty-wake.svg",
     attention: "assets/cat-misty-attention.svg",
     typingLeft: "assets/cat-misty-press-left.svg",
     typingRight: "assets/cat-misty-press-right.svg",
@@ -52,6 +53,7 @@
   }
 
   let typingTimer = null;
+  let sleepWakeTimer = null;
 
   function stopTyping() {
     window.clearInterval(typingTimer);
@@ -72,12 +74,24 @@
   }
 
   function setState(host, state) {
+    const previousState = host.dataset.catState;
     host.dataset.catState = state;
+    window.clearTimeout(sleepWakeTimer);
     if (state === "typing") {
-      startTyping(host);
+      if (previousState === "sleep") {
+        setCatAsset(host, "wake");
+        sleepWakeTimer = window.setTimeout(() => startTyping(host), 620);
+      } else {
+        startTyping(host);
+      }
       return;
     }
     stopTyping();
+    if (previousState === "sleep" && state !== "sleep") {
+      setCatAsset(host, "wake");
+      sleepWakeTimer = window.setTimeout(() => setCatAsset(host, state), 620);
+      return;
+    }
     setCatAsset(host, state);
   }
 

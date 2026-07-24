@@ -1,4 +1,4 @@
-<svg class="idle-sleep" data-pattern-resolution="2" style="--cat-color:#1A1A1A;--eye-color:#1A1A1A;--eye-bg-color:#FFFFFF;--eye-color-left:#1A1A1A;--eye-color-right:#1A1A1A;--eye-pupil-scale:100%" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -10 50 50" width="500" height="500" shape-rendering="crispEdges">
+<svg class="idle-sleep-return" data-pattern-resolution="2" style="--cat-color:#1A1A1A;--eye-color:#1A1A1A;--eye-bg-color:#FFFFFF;--eye-color-left:#1A1A1A;--eye-color-right:#1A1A1A;--eye-pupil-scale:100%" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -10 50 50" width="500" height="500" shape-rendering="crispEdges">
   <defs>
     <style>
       :root {
