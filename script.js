@@ -5,6 +5,8 @@
   const purr = document.getElementById("purr-audio");
   const stageCat = document.querySelector(".cat-host-stage");
   const bubble = document.getElementById("cat-bubble");
+  const demoStateTitle = document.getElementById("demo-state-title");
+  const demoStateCopy = document.getElementById("demo-state-copy");
   const catAssets = {
     idle: "assets/cat-misty-idle.svg",
     purring: "assets/cat-misty-purring.svg",
@@ -18,6 +20,24 @@
     typing: "\u0412\u043e\u0442 \u044d\u0442\u043e \u0442\u0435\u043c\u043f",
     sleep: "\u0422\u0438\u0448\u0435. \u042f \u0441\u043f\u043b\u044e.",
     attention: "\u041f\u043e\u0433\u043b\u0430\u0434\u044c \u043c\u0435\u043d\u044f, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430",
+  };
+  const stateCopy = {
+    idle: {
+      title: "Он просто рядом, пока ты работаешь.",
+      copy: "Погладь кота курсором: он замурчит. Нажми состояния снизу, чтобы увидеть, как CatCode меняется в приложении.",
+    },
+    typing: {
+      title: "Когда темп растёт, кот включается в работу.",
+      copy: "CatCode реагирует на активную печать: переключает позы и оживляет рабочий стол, не закрывая твои окна.",
+    },
+    sleep: {
+      title: "Нет активности - кот спокойно засыпает.",
+      copy: "Он остаётся рядом, но не требует внимания. Вернёшься к компьютеру - CatCode снова проснётся вместе с тобой.",
+    },
+    attention: {
+      title: "Иногда он мягко напомнит о себе.",
+      copy: "Можно включить случайные просьбы о внимании: кот мяукает и ждёт поглаживания, пока ты не ответишь.",
+    },
   };
 
   document.querySelectorAll(".cat-host").forEach((host) => {
@@ -59,6 +79,12 @@
     }
     stopTyping();
     setCatAsset(host, state);
+  }
+
+  function updateDemoCopy(state) {
+    const next = stateCopy[state] || stateCopy.idle;
+    if (demoStateTitle) demoStateTitle.textContent = next.title;
+    if (demoStateCopy) demoStateCopy.textContent = next.copy;
   }
 
   function stopPurring() {
@@ -104,6 +130,7 @@
       button.classList.add("is-active");
       if (stageCat) setState(stageCat, state);
       if (bubble) bubble.textContent = stateText[state] || stateText.idle;
+      updateDemoCopy(state);
     });
   });
 
