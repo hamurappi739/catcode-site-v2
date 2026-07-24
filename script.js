@@ -10,6 +10,8 @@
     purring: "assets/cat-misty-purring.svg",
     sleep: "assets/cat-misty-sleep.svg",
     attention: "assets/cat-misty-attention.svg",
+    typingLeft: "assets/cat-misty-press-left.svg",
+    typingRight: "assets/cat-misty-press-right.svg",
   };
   const stateText = {
     idle: "\u042f \u0440\u044f\u0434\u043e\u043c",
@@ -29,9 +31,34 @@
     if (!image.src.endsWith(asset)) image.src = asset;
   }
 
+  let typingTimer = null;
+
+  function stopTyping() {
+    window.clearInterval(typingTimer);
+    typingTimer = null;
+  }
+
+  function startTyping(host) {
+    stopTyping();
+    let useLeftPose = true;
+    const showNextPose = () => {
+      const image = host.querySelector(".cat-object");
+      if (!image) return;
+      image.src = useLeftPose ? catAssets.typingLeft : catAssets.typingRight;
+      useLeftPose = !useLeftPose;
+    };
+    showNextPose();
+    typingTimer = window.setInterval(showNextPose, 180);
+  }
+
   function setState(host, state) {
     host.dataset.catState = state;
-    setCatAsset(host, state === "typing" ? "idle" : state);
+    if (state === "typing") {
+      startTyping(host);
+      return;
+    }
+    stopTyping();
+    setCatAsset(host, state);
   }
 
   function stopPurring() {
@@ -71,6 +98,7 @@
     button.addEventListener("click", () => {
       const state = button.dataset.state;
       window.clearTimeout(purrStopTimer);
+      stopTyping();
       stopPurring();
       document.querySelectorAll(".state-button").forEach((item) => item.classList.remove("is-active"));
       button.classList.add("is-active");
