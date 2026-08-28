@@ -3,233 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="CatCode - живой кот на рабочем столе: фокус, напоминания и свой скин по фото."
-    />
-    <title>CatCode - кот для рабочего стола</title>
-    <link rel="preload" href="assets/catcode-tabby.png" as="image" />
+    <meta name="description" content="CatCode — живой пиксельный кот для рабочего стола: работа, фокус, забота о себе и немного игры." />
+    <title>CatCode — кот для рабочего стола</title>
+    <link rel="icon" href="assets/catcode-v6-logo.png" />
+    <link rel="preload" href="assets/v6/site-v2/typing.webm" as="video" type="video/webm" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="CatCode, на главную">
-        <img src="assets/catcode-logo.png" alt="" width="34" height="34" />
-        <span>CatCode</span>
-      </a>
-      <nav aria-label="Навигация">
-        <a href="#what-is-it">Что это</a>
-        <a href="#play">В работе</a>
-        <a href="#agents">Агенты</a>
-        <a href="#your-cat">Создать кота</a>
-        <a href="#how-it-works">Как получить</a>
-      </nav>
-      <a class="header-cta" href="https://t.me/catcodeapp" target="_blank" rel="noreferrer">
-        Telegram
-      </a>
+      <a class="brand" href="#top" aria-label="CatCode, на главную"><img src="assets/catcode-v6-logo.png" alt="" width="34" height="34" /><span>CatCode</span></a>
+      <nav aria-label="Навигация"><a href="#mechanics">Механики</a><a href="#focus">Фокус</a><a href="#looks">Скины</a><a href="#privacy">Приватность</a></nav>
+      <a class="header-cta" href="#buy">500 ₽</a>
     </header>
-
     <main id="main">
-      <section id="top" class="hero">
-        <div class="hero-noise" aria-hidden="true"></div>
-        <div class="hero-inner">
-          <p class="eyebrow reveal">ПРИЛОЖЕНИЕ ДЛЯ WINDOWS</p>
-          <h1 class="reveal">Живой кот<br />на рабочем столе.</h1>
-          <p class="hero-copy reveal">
-            CatCode живёт поверх окон, помогает держать фокус, напоминает о воде и перерывах, а ещё радуется, когда Codex, Cursor или Claude Code заканчивают задачу.
-          </p>
-          <div class="hero-actions reveal">
-            <a class="button button-primary" href="https://t.me/catcodeapp" target="_blank" rel="noreferrer">
-              Получить приложение за 500 ₽
-            </a>
-            <a class="button button-quiet" href="#play">Посмотреть в деле</a>
-          </div>
-          <div class="hero-facts reveal" aria-label="Коротко о CatCode">
-            <span>Windows 10/11</span>
-            <span>После активации работает офлайн</span>
-            <span>Бессрочная лицензия</span>
-          </div>
+      <section id="top" class="hero section-band">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">ДЕСКТОПНОЕ ПРИЛОЖЕНИЕ ДЛЯ WINDOWS</p>
+          <h1>CatCode</h1>
+          <p class="hero-lead">Живой кот, который остаётся рядом, пока вы работаете.</p>
+          <p class="hero-text">Он печатает вместе с вами, засыпает в паузах, напоминает о воде и разминке, умеет охотиться за курсором и просто делает рабочий стол чуть живее.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#buy">Получить за 500 ₽</a><a class="button button-secondary" href="#mechanics">Посмотреть механики</a></div>
+          <ul class="hero-notes" aria-label="Коротко о приложении"><li>Windows 10 / 11</li><li>Бессрочная лицензия</li><li>После активации работает офлайн</li></ul>
         </div>
-        <div class="hero-app-scene reveal" aria-label="Окно приложения CatCode на рабочем столе">
-          <div class="hero-scene-bar"><span></span><span></span><span></span><b>CatCode для Windows</b><em>Работает</em></div>
-          <div class="hero-scene-workspace">
-            <div class="hero-code" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="hero-focus-card"><span>Фокус</span><strong>24:58</strong><small>До короткого перерыва</small></div>
-            <div class="hero-agent-card"><span class="agent-dot"></span><div><b>Задача завершена</b><small>Codex закончил проверку</small></div></div>
-            <div class="hero-cat-wrap" aria-label="Кот CatCode">
-              <div class="hero-cat-bubble">Я рядом.</div>
-              <div class="cat-host cat-host-hero" data-cat-state="idle"></div>
-              <div class="hero-cat-label">CatCode</div>
-            </div>
-          </div>
-        </div>
-        <p class="hero-scroll">Листай вниз</p>
-      </section>
-
-      <section id="what-is-it" class="what-is-it">
-        <div class="section-shell what-grid reveal">
-          <p class="eyebrow">ЧТО ЭТО ЗА ПРИЛОЖЕНИЕ</p>
-          <p class="what-main">CatCode - это десктопный помощник для Windows в виде живого пиксельного кота.</p>
-          <div class="what-points">
-            <p><b>Рядом</b><span>живёт поверх рабочего стола</span></p>
-            <p><b>Помнит</b><span>напоминает о делах и заботе о себе</span></p>
-            <p><b>Реагирует</b><span>на работу, бездействие и завершение задач</span></p>
-          </div>
+        <div class="hero-stage reveal" aria-label="Демонстрация печатающего кота CatCode">
+          <div class="app-window"><div class="window-bar"><span></span><span></span><span></span><b>Рабочий стол</b></div><div class="window-content">
+            <div class="code-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="focus-time"><span>Фокус</span><strong>24:58</strong><small>До короткого перерыва</small></div>
+            <div class="pet-video pet-video-hero"><video autoplay muted loop playsinline preload="auto" aria-label="Кот печатает"><source src="assets/v6/site-v2/typing.webm" type="video/webm" /></video></div>
+            <div class="pet-message">Я рядом.</div>
+          </div></div>
         </div>
       </section>
-
-      <section id="play" class="playground section-shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">КАК ОН ВЕДЁТ СЕБЯ В ТЕЧЕНИЕ ДНЯ</p>
-          <h2>Не просто сидит.<br />Живёт вместе с твоим ритмом.</h2>
-        </div>
-        <div class="desk-stage reveal">
-          <div class="desk-window" aria-label="Интерактивная демонстрация CatCode">
-            <div class="window-bar"><span></span><span></span><span></span><b>CatCode</b></div>
-            <div class="window-workspace">
-              <div class="code-lines" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
-              <div class="cat-host cat-host-stage" data-cat-state="idle"></div>
-              <div class="cat-bubble" id="cat-bubble" aria-live="polite">Погладь меня</div>
-            </div>
-            <div class="window-controls" role="group" aria-label="Состояния кота">
-              <button class="state-button is-active" type="button" data-state="idle">Рядом</button>
-              <button class="state-button" type="button" data-state="typing">Работает</button>
-              <button class="state-button" type="button" data-state="sleep">Спит</button>
-              <button class="state-button" type="button" data-state="attention">Ждёт тебя</button>
-            </div>
-          </div>
-          <div class="playground-copy">
-            <p class="eyebrow">ИНТЕРАКТИВНАЯ ДЕМОНСТРАЦИЯ</p>
-            <p id="demo-state-title" class="big-copy">Он просто рядом, пока ты работаешь.</p>
-            <p id="demo-state-copy" class="small-copy">Погладь кота курсором: он замурчит. Нажми состояния снизу, чтобы увидеть, как CatCode меняется в приложении.</p>
-            <div class="demo-capabilities" aria-label="Возможности CatCode">
-              <span>Фокус и помодоро</span><span>Вода и разминка</span><span>Напоминания</span><span>Завершение задач агентов</span>
-            </div>
-          </div>
-        </div>
+      <section id="mechanics" class="section-band mechanics-section">
+        <div class="section-intro reveal"><p class="eyebrow">МЕХАНИКИ</p><h2>Не картинка в углу.<br />Кот живёт в вашем ритме.</h2><p>CatCode реагирует на понятные события на компьютере, но не читает текст документов и содержимое экрана.</p></div>
+        <div class="mechanic-row reveal"><div class="mechanic-media"><video autoplay muted loop playsinline preload="metadata"><source src="assets/v6/site-v2/typing.webm" type="video/webm" /></video></div><div class="mechanic-copy"><span class="section-number">01</span><h3>Работает рядом</h3><p>При активной печати кот оживляется и нажимает клавиши вместе с вами. После паузы спокойно отдыхает.</p><ul><li>Печать</li><li>Прокрутка</li><li>Сон после бездействия</li></ul></div></div>
+        <div class="mechanic-row mechanic-row-reverse reveal"><div class="mechanic-media"><video autoplay muted loop playsinline preload="metadata"><source src="assets/v6/site-v2/walk.webm" type="video/webm" /></video></div><div class="mechanic-copy"><span class="section-number">02</span><h3>Иногда играет</h3><p>Кот гуляет по экрану, прячется у края, танцует и может охотиться за курсором, если включить эту механику.</p><ul><li>Прогулки</li><li>Кража курсора</li><li>Танцы</li></ul></div></div>
+        <div class="mechanic-row reveal"><div class="mechanic-media"><video autoplay muted loop playsinline preload="metadata"><source src="assets/v6/site-v2/hunt.webm" type="video/webm" /></video></div><div class="mechanic-copy"><span class="section-number">03</span><h3>Охотится по вашему жесту</h3><p>Включите «Охотиться за курсором», затем быстро проведите курсором влево-вправо рядом с котом. Он присядет и будет следить за целью.</p><ul><li>Механика выключена по умолчанию</li><li>Срабатывает только рядом с котом</li></ul></div></div>
       </section>
-
-      <section id="agents" class="agent-work section-shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">АГЕНТЫ ПИШУТ КОД. КОТ В КУРСЕ.</p>
-          <h2>Задача выполнена.<br />CatCode прыгает от радости.</h2>
-          <p>CatCode отслеживает локальные события Codex, Cursor и Claude Code. Когда агент завершает задачу, кот показывает уведомление и запускает анимацию завершения.</p>
-        </div>
-        <div class="agent-demo reveal" aria-label="Демонстрация завершения задачи агентом">
-          <div class="agent-log">
-            <div class="agent-log-bar"><span></span><span></span><span></span><b>Codex</b></div>
-            <p class="agent-log-title">Задача: обновить интерфейс</p>
-            <div class="agent-log-line"><span>01</span><code>Проверяю изменения</code></div>
-            <div class="agent-log-line"><span>02</span><code>Запускаю проверку</code></div>
-            <div class="agent-log-line"><span>03</span><code>Готово</code></div>
-            <p id="agent-status" class="agent-status">Ожидает завершения</p>
-          </div>
-          <div class="completion-stage">
-            <p id="agent-message" class="completion-message" aria-live="polite">Нажми, чтобы завершить задачу</p>
-            <div class="completion-cat-wrap" aria-hidden="true">
-              <img id="completion-cat" src="assets/cat-misty-idle.svg" alt="" width="500" height="500" />
-            </div>
-            <button id="complete-task" class="button button-primary" type="button">Завершить задачу</button>
-          </div>
-        </div>
-        <p class="agent-note reveal">События обрабатываются локально на Windows: CatCode не отправляет содержимое твоих задач на сайт.</p>
+      <section id="focus" class="section-band focus-section">
+        <div class="section-intro reveal"><p class="eyebrow">ФОКУС И ЗАБОТА</p><h2>Помнит о паузах,<br />не отвлекая от дела.</h2></div>
+        <div class="focus-layout reveal"><div class="focus-list">
+          <article><span class="feature-icon">01</span><div><h3>Таймер фокуса</h3><p>Рабочие и короткие перерывы в удобном темпе.</p></div></article>
+          <article><span class="feature-icon">02</span><div><h3>Вода и разминка</h3><p>Мягкие напоминания, которые можно настроить или выключить.</p></div></article>
+          <article><span class="feature-icon">03</span><div><h3>Напоминания</h3><p>Одноразовые и повторяющиеся задачи, когда важно ничего не забыть.</p></div></article>
+          <article><span class="feature-icon">04</span><div><h3>Эмоции</h3><p>Кот может злиться, мурчать, радоваться и отвечать на внимание.</p></div></article>
+        </div><div class="focus-media"><video autoplay muted loop playsinline preload="metadata"><source src="assets/v6/site-v2/sleep.webm" type="video/webm" /></video><span>В паузе — отдыхает вместе с вами</span></div></div>
       </section>
-
-      <section class="rhythm">
-        <div class="rhythm-intro section-shell reveal">
-          <p class="eyebrow">НЕ ОТВЛЕКАЕТ. ПОДДЕРЖИВАЕТ.</p>
-          <h2>Маленькие сигналы,<br />из которых собирается день.</h2>
-        </div>
-        <div class="rhythm-list">
-          <article class="rhythm-row reveal">
-            <span class="rhythm-index">01</span>
-            <div><h3>Фокус без жёсткости</h3><p>Помодоро и понятный ритм работы, когда нужно спокойно дойти до конца задачи.</p></div>
-            <span class="rhythm-tag">ПОМОДОРО</span>
-          </article>
-          <article class="rhythm-row reveal">
-            <span class="rhythm-index">02</span>
-            <div><h3>Нормальные перерывы</h3><p>Вода, разминка и отдых появляются вовремя, а не когда уже всё затекло.</p></div>
-            <span class="rhythm-tag">ЗАБОТА</span>
-          </article>
-          <article class="rhythm-row reveal">
-            <span class="rhythm-index">03</span>
-            <div><h3>Напоминания, которые не забывают</h3><p>Закреплённые фразы и тихие сигналы остаются рядом, пока ты занят.</p></div>
-            <span class="rhythm-tag">ПАМЯТЬ</span>
-          </article>
-        </div>
-      </section>
-
-      <section id="your-cat" class="your-cat section-shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">ТВОЙ ОКРАС. ТВОЙ ХАРАКТЕР.</p>
-          <h2>Преврати фотографию<br />своего кота в скин.</h2>
-          <p>В CatCode уже есть шаблон и готовый промпт. Нейросеть получает фото, сохраняет цвета и отметины, а готовый JSON импортируется в приложение.</p>
-        </div>
-        <div class="transformation reveal">
-          <figure class="photo-card">
-            <img src="assets/catcode-tabby.png" alt="Серый полосатый кот с зелёными глазами" width="1122" height="1403" loading="lazy" />
-            <figcaption>01 / Фото кота</figcaption>
-          </figure>
-          <div class="transform-formula" aria-label="Фото плюс промпт равно скин CatCode">
-            <span>+</span>
-            <div class="prompt-chip">JSON<br />ПРОМПТ</div>
-            <span>=</span>
-          </div>
-          <figure class="skin-card">
-            <div class="skin-grid" aria-hidden="true"></div>
-            <div class="cat-host cat-host-skin" data-cat-state="idle"></div>
-            <figcaption>02 / Скин CatCode</figcaption>
-          </figure>
-        </div>
-        <p class="your-cat-note reveal">Серый окрас, тёмные полосы и цвет глаз с фотографии переносятся в скин.</p>
-      </section>
-
-      <section id="how-it-works" class="how-it-works">
-        <div class="section-shell purchase-layout">
-          <div class="purchase-copy reveal">
-            <p class="eyebrow">ПОЛУЧИТЬ CATCODE</p>
-            <h2>Один кот.<br />Один ключ.<br />Навсегда.</h2>
-            <p>Напиши в Telegram. Я пришлю установщик после оплаты и личный ключ для активации.</p>
-            <a class="button button-primary" href="https://t.me/catcodeapp" target="_blank" rel="noreferrer">Написать @catcodeapp</a>
-          </div>
-          <ol class="purchase-steps reveal">
-            <li><span>01</span><strong>Пишешь в Telegram</strong><p>Задаёшь вопрос или сразу говоришь, что хочешь CatCode.</p></li>
-            <li><span>02</span><strong>Оплачиваешь 500 ₽</strong><p>После оплаты получаешь установщик для Windows и персональный ключ.</p></li>
-            <li><span>03</span><strong>Активируешь</strong><p>Вводишь ключ при первом запуске. Лицензия бессрочная и привязывается к одному устройству.</p></li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="faq section-shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">КОРОТКО О ВАЖНОМ</p>
-          <h2>Перед знакомством.</h2>
-        </div>
-        <div class="faq-list reveal">
-          <details open><summary>На чём работает CatCode?</summary><p>На Windows 10 и Windows 11, 64-битная версия.</p></details>
-          <details><summary>Нужен ли интернет после активации?</summary><p>Кот продолжает работать офлайн. Интернет нужен только для редкой проверки лицензии.</p></details>
-          <details><summary>Можно ли перенести ключ на другой компьютер?</summary><p>Да. Напиши в Telegram, и устройство можно отвязать без потери лицензии.</p></details>
-        </div>
-      </section>
+      <section class="section-band dance-section"><div class="dance-copy reveal"><p class="eyebrow">НЕМНОГО ХАРАКТЕРА</p><h2>Закончили задачу?<br />Есть повод потанцевать.</h2><p>CatCode умеет отмечать приятные моменты: радоваться, показывать эмоции и включать танец, когда хочется маленькой награды за сделанную работу.</p></div><div class="dance-media reveal"><video autoplay muted loop playsinline preload="metadata"><source src="assets/v6/site-v2/dance.webm" type="video/webm" /></video></div></section>
+      <section id="looks" class="section-band looks-section"><div class="section-intro reveal"><p class="eyebrow">ВНЕШНОСТЬ</p><h2>Выберите готовый окрас<br />или настройте свой.</h2><p>В каталоге есть разные коты. В редакторе можно подобрать основной окрас, тени, контур, внутреннюю часть ушей, глаза, нос и рот.</p></div><div class="looks-layout reveal"><div class="skin-swatches" aria-label="Примеры окрасов"><span class="swatch snowball"></span><span class="swatch ginger"></span><span class="swatch black"></span><span class="swatch ocean"></span><span class="swatch amethyst"></span><span class="swatch rose"></span></div><div class="looks-media"><video autoplay muted loop playsinline preload="metadata"><source src="assets/v6/site-v2/skins.webm" type="video/webm" /></video></div><p class="looks-note">Палитра меняет цвет, не ломая глаза, лапы, предметы и анимации.</p></div></section>
+      <section id="privacy" class="section-band privacy-section"><div class="privacy-copy reveal"><p class="eyebrow">КОНТРОЛЬ</p><h2>Ваш рабочий стол<br />остаётся вашим.</h2><p>CatCode реагирует на ритм работы, но не читает содержимое документов, кода, переписок или экрана.</p></div><ul class="privacy-list reveal"><li><b>Вы управляете механиками</b><span>Вода, разминка, охота за курсором и игровые реакции включаются отдельно.</span></li><li><b>Кот не мешает</b><span>Размер, позицию, край экрана и видимость можно настроить.</span></li><li><b>После активации — офлайн</b><span>Приложение продолжает работать без постоянного подключения.</span></li></ul></section>
+      <section id="buy" class="section-band buy-section"><div class="buy-panel reveal"><div><p class="eyebrow">CATCODE ДЛЯ WINDOWS</p><h2>Один кот.<br />Бессрочная лицензия.</h2></div><div class="buy-price"><strong>500 ₽</strong><span>один компьютер</span></div><div class="buy-action"><a class="button button-primary" href="https://t.me/catcodeapp" target="_blank" rel="noreferrer">Написать в Telegram</a><small>После покупки придёт инструкция по активации.</small></div></div></section>
+      <section class="section-band faq-section"><div class="section-intro reveal"><p class="eyebrow">ВОПРОСЫ</p><h2>Коротко о главном.</h2></div><div class="faq-list reveal"><details><summary>На какой системе работает CatCode?</summary><p>Основная версия рассчитана на Windows 10 и Windows 11.</p></details><details><summary>Можно выключить игровые механики?</summary><p>Да. Охоту, прогулки и другие реакции можно настраивать отдельно.</p></details><details><summary>Можно изменить имя кота?</summary><p>Да. Имя CatCode — имя кота. В настройках можно задать своё имя, которым кот будет к вам обращаться.</p></details><details><summary>Можно ли выбрать другой окрас?</summary><p>Да. Есть каталог готовых скинов и редактор палитры для собственного цвета.</p></details></div></section>
     </main>
-
-    <footer class="site-footer">
-      <span>CatCode / 2026</span>
-      <a href="https://t.me/catcodeapp" target="_blank" rel="noreferrer">@catcodeapp</a>
-    </footer>
-
-    <template id="cat-template">
-      <div class="cat" role="img" aria-label="Кот CatCode">
-        <img class="cat-object" src="assets/cat-misty-idle.svg" alt="" width="500" height="500" />
-        <span class="cat-heart cat-heart-one" aria-hidden="true">&hearts;</span>
-        <span class="cat-heart cat-heart-two" aria-hidden="true">&hearts;</span>
-        <span class="cat-sleep-mark" aria-hidden="true"><span>Z</span><span>z</span><span>z</span></span>
-      </div>
-    </template>
-    <audio id="purr-audio" preload="auto"><source src="assets/purring.m4a" type="audio/mp4" /></audio>
+    <footer class="site-footer"><a class="brand" href="#top"><img src="assets/catcode-v6-logo.png" alt="" width="28" height="28" /><span>CatCode</span></a><span>Живой кот для рабочего стола</span><a href="https://t.me/catcodeapp" target="_blank" rel="noreferrer">Telegram</a></footer>
     <script src="script.js"></script>
   </body>
 </html>
