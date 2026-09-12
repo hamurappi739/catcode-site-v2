@@ -46,6 +46,7 @@ export default function Hero() {
   const stageRef = useRef<HTMLDivElement>(null);
   const [par, setPar] = useState({ x: 0, y: 0 });
   const [typed, setTyped] = useState(0);
+  const [typingRun, setTypingRun] = useState(0);
 
   const titleParts = [t.heroTitleA, t.heroTitleB, t.heroTitleC];
   const titleLength = titleParts.reduce((sum, part) => sum + part.length, 0);
@@ -62,7 +63,37 @@ export default function Hero() {
       });
     }, 46);
     return () => window.clearInterval(id);
-  }, [titleLength, t.heroTitleA, t.heroTitleB, t.heroTitleC]);
+  }, [titleLength, typingRun, t.heroTitleA, t.heroTitleB, t.heroTitleC]);
+
+  useEffect(() => {
+    const hero = document.getElementById("top");
+    if (!hero) return;
+
+    let initialized = false;
+    let wasVisible = false;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.45;
+        if (!initialized) {
+          initialized = true;
+        } else if (visible && !wasVisible) {
+          setTypingRun((run) => run + 1);
+        }
+        wasVisible = visible;
+      },
+      { threshold: [0, 0.45] }
+    );
+    observer.observe(hero);
+
+    const onHashChange = () => {
+      if (window.location.hash === "#top") setTypingRun((run) => run + 1);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
 
   const revealPart = (part: string, offset: number) => part.slice(0, Math.max(0, Math.min(part.length, typed - offset)));
 
