@@ -81,7 +81,7 @@ export default function Rhythm() {
       desc: t.rhythm4d,
       tags: t.rhythm4tags,
       media: (
-        <MediaFrame caption={`scroll.webm · ${t.rhythmVideoNote}`}>
+        <MediaFrame caption={`scroll-fixed.webm · ${t.rhythmVideoNote}`}>
           <AppVideo src={A.video.scroll} />
         </MediaFrame>
       ),

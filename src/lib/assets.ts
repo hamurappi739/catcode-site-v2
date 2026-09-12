@@ -24,6 +24,7 @@ export const A = {
   video: {
     typing: `${SITE}/typing.webm`,
     sleep: `${SITE}/sleep.webm`,
+    scroll: `${SITE}/scroll-fixed.webm`,
     walk: `${SITE}/walk.webm`,
     hunt: `${SITE}/hunt.webm`,
     dance: `${SITE}/dance.webm`,
