@@ -1,9 +1,5 @@
-# Local editor and operating-system files
-.DS_Store
-Thumbs.db
-*.log
-
-# Temporary visual QA captures
-*-before.png
-*-mid.png
-*-mobile.png
+node_modules/
+dist/
+.env
+.env.*
+!.env.example

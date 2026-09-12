@@ -1,7 +1,18 @@
-# CatCode Site
+# CatCode site
 
-Static one-page landing page for CatCode.
+Актуальная версия промо-сайта CatCode на React + Vite.
 
-Open `index.html` directly in a browser. The site is static and does not need a local server.
+## Запуск
 
-The production CTA points to `https://t.me/catcodeapp`.
+```bash
+npm ci
+npm run dev
+```
+
+## Сборка
+
+```bash
+npm run build
+```
+
+Все визуальные ассеты сайта лежат в `public/assets` и собраны из актуальных v6-кадров приложения CatCode.
