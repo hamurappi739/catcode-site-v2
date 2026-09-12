@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { AppWindow } from "lucide-react";
-import CatSprite from "../components/CatSprite";
-import { LazyIn, Reveal, SectionHead } from "../components/Reveal";
+import { Reveal, SectionHead } from "../components/Reveal";
 import { A } from "../lib/assets";
 import { useLang } from "../lib/lang";
 
@@ -39,62 +38,6 @@ function AppVideo({ src }: { src: string }) {
   );
 }
 
-/** Живой кот, который следит за курсором прямо здесь, в блоке. */
-function GazeLive() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState({ x: 0.5, y: 0.5 });
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const move = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      setPos({
-        x: Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)),
-        y: Math.min(1, Math.max(0, (e.clientY - r.top) / r.height)),
-      });
-    };
-    const over = () => setActive(true);
-    const out = () => setActive(false);
-    el.addEventListener("pointermove", move, { passive: true });
-    el.addEventListener("pointerenter", over);
-    el.addEventListener("pointerleave", out);
-    return () => {
-      el.removeEventListener("pointermove", move);
-      el.removeEventListener("pointerenter", over);
-      el.removeEventListener("pointerleave", out);
-    };
-  }, []);
-
-  return (
-    <div ref={ref} className="relative flex h-[300px] cursor-crosshair items-end justify-center overflow-hidden bg-grid bg-ink-950">
-      {/* перекрестье */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
-        style={{ opacity: active ? 1 : 0 }}
-      >
-        <div className="absolute inset-y-0 w-px bg-cyan-neon/25" style={{ left: `${pos.x * 100}%` }} />
-        <div className="absolute inset-x-0 h-px bg-cyan-neon/25" style={{ top: `${pos.y * 100}%` }} />
-        <div
-          className="absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-cyan-neon shadow-[0_0_14px_rgba(46,230,255,0.5)]"
-          style={{ left: `${pos.x * 100}%`, top: `${pos.y * 100}%` }}
-        />
-      </div>
-      <div className="w-40 pb-8 md:w-44">
-        <LazyIn minHeight={170}>
-          <CatSprite mood="idle" follow />
-        </LazyIn>
-      </div>
-      <div aria-hidden className="absolute bottom-[2.2rem] h-2 w-40 rounded-full bg-black/50 blur-md" />
-      <div className="absolute left-3 top-3 font-mono text-[9px] uppercase tracking-[0.24em] text-mist-500/70">
-        live · gaze tracking
-      </div>
-    </div>
-  );
-}
-
 export default function Rhythm() {
   const { t } = useLang();
 
@@ -116,8 +59,8 @@ export default function Rhythm() {
       desc: t.rhythm2d,
       tags: t.rhythm2tags,
       media: (
-        <MediaFrame caption="live demo">
-          <GazeLive />
+        <MediaFrame caption={`hunt.webm · ${t.rhythmVideoNote}`}>
+          <AppVideo src={A.video.hunt} />
         </MediaFrame>
       ),
     },
