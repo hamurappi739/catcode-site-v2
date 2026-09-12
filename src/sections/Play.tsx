@@ -126,6 +126,7 @@ export default function Play() {
                 icon={<MousePointer2 className="h-4 w-4" />}
                 title={t.play3t}
                 desc={t.play3d}
+                tags={t.play3tags as unknown as string[]}
                 media={
                   <div className="relative flex h-[210px] items-center justify-center overflow-hidden bg-grid bg-ink-950">
                     <MousePointer2 className="absolute left-[24%] top-[30%] h-5 w-5 text-frost-100/80 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:left-[62%] group-hover:top-[58%]" fill="rgba(7,9,12,0.9)" />

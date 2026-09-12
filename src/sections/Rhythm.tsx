@@ -138,15 +138,8 @@ export default function Rhythm() {
       desc: t.rhythm4d,
       tags: t.rhythm4tags,
       media: (
-        <MediaFrame caption="scroll reaction">
-          <div className="flex h-[300px] items-end justify-center overflow-hidden bg-grid bg-ink-950 pb-8">
-            <img
-              src={A.cat.scroll}
-              alt="Реакция кота на прокрутку"
-              className="w-40 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 md:w-44"
-              draggable={false}
-            />
-          </div>
+        <MediaFrame caption={`scroll.webm · ${t.rhythmVideoNote}`}>
+          <AppVideo src={A.video.scroll} />
         </MediaFrame>
       ),
     },

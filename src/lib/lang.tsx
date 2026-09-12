@@ -78,7 +78,8 @@ const dict = {
       "Выключена по умолчанию. Быстро проведите курсором влево-вправо рядом с котом — он присядет и начнёт следить за целью.",
     play2tags: ["выкл. по умолчанию", "срабатывает рядом с котом"],
     play3t: "Кража курсора",
-    play3d: "Может схватить курсор и отнести в сторону — и тут же вернуть. Игра, а не саботаж.",
+    play3d: "Кот может схватить курсор и ненадолго унести его в сторону, а затем вернуть обратно.",
+    play3tags: ["выкл. по умолчанию", "можно включить отдельно"],
     play4t: "Танцы",
     play4d: "Закончили задачу? Есть повод потанцевать. Кот умеет отмечать маленькие победы.",
     playTryHint: "попробуйте в демо выше",
@@ -105,11 +106,10 @@ const dict = {
     careEmotionAudioNote: "звук из приложения",
 
     skinsEyebrow: "Внешность",
-    skinsTitle: "Готовый окрас — или ваш собственный кот.",
-    skinsLead:
-      "В приложении есть каталог скинов и редактор палитры: основной окрас, тени, контур, внутренняя часть ушей, глаза, нос и рот.",
-    skinsNote: "Палитра меняет цвет, не ломая глаза, лапы, предметы и анимации.",
-    skinsEditorTitle: "Демо редактора — на настоящей графике кота",
+    skinsTitle: "Выберите готовый окрас для своего кота.",
+    skinsLead: "В приложении есть каталог готовых скинов. Выберите вариант — и кот будет выглядеть именно так.",
+    skinsNote: "Все варианты взяты из актуального каталога CatCode.",
+    skinsEditorTitle: "Каталог актуальных скинов",
     skinsFur: "Шерсть",
     skinsOutline: "Контур",
     skinsEyes: "Глаза",
@@ -117,9 +117,9 @@ const dict = {
     skinsEyeL: "Левый",
     skinsEyeR: "Правый",
     skinsPupil: "Зрачки",
-    skinsReset: "Сбросить палитру",
+    skinsReset: "Вернуть Snowball",
     skinsCatalog: "каталог скинов в приложении",
-    skinsPresetLabel: "примеры палитры",
+    skinsPresetLabel: "готовые скины",
     skinsParts: ["шерсть", "тени", "контур", "уши", "глаза", "нос и рот"],
 
     privacyEyebrow: "Приватность",
@@ -169,7 +169,7 @@ const dict = {
       },
       {
         q: "Можно выбрать другой окрас?",
-        a: "Да. Есть каталог готовых скинов и редактор палитры для собственного цвета шерсти, глаз, ушей, носа и контура.",
+        a: "Да. В приложении есть каталог готовых скинов, которые можно выбрать в настройках.",
       },
       {
         q: "Нужен ли интернет?",
@@ -255,7 +255,8 @@ const dict = {
       "Off by default. Shake the cursor left-right near the cat — it crouches and locks onto the target.",
     play2tags: ["off by default", "triggers near the cat"],
     play3t: "Cursor theft",
-    play3d: "It can grab the cursor and carry it away — then give it right back. Play, not sabotage.",
+    play3d: "The cat can grab the cursor, carry it away for a moment, and bring it back.",
+    play3tags: ["off by default", "enabled separately"],
     play4t: "Dancing",
     play4d: "Finished a task? Time for a small dance. The cat loves celebrating tiny victories.",
     playTryHint: "try it in the demo above",
@@ -282,11 +283,10 @@ const dict = {
     careEmotionAudioNote: "sound from the app",
 
     skinsEyebrow: "Appearance",
-    skinsTitle: "A ready-made coat — or your very own cat.",
-    skinsLead:
-      "The app ships a skin catalog and a palette editor: base coat, shadows, outline, inner ears, eyes, nose and mouth.",
-    skinsNote: "The palette changes colour without breaking eyes, paws, props or animation.",
-    skinsEditorTitle: "Editor demo — on the real cat artwork",
+    skinsTitle: "Choose a ready-made coat for your cat.",
+    skinsLead: "The app includes a catalog of ready-made skins. Pick a variant and see the cat in that look.",
+    skinsNote: "Every option comes from the current CatCode catalog.",
+    skinsEditorTitle: "Current skin catalog",
     skinsFur: "Fur",
     skinsOutline: "Outline",
     skinsEyes: "Eyes",
@@ -296,7 +296,7 @@ const dict = {
     skinsPupil: "Pupils",
     skinsReset: "Reset palette",
     skinsCatalog: "skin catalog inside the app",
-    skinsPresetLabel: "sample palettes",
+    skinsPresetLabel: "ready-made skins",
     skinsParts: ["fur", "shadows", "outline", "ears", "eyes", "nose & mouth"],
 
     privacyEyebrow: "Privacy",
@@ -346,7 +346,7 @@ const dict = {
       },
       {
         q: "Can I pick a different coat?",
-        a: "Yes. There's a catalog of ready skins and a palette editor for your own fur, eye, ear, nose and outline colours.",
+        a: "Yes. The app includes a catalog of ready-made skins you can choose in settings.",
       },
       {
         q: "Does it need the internet?",

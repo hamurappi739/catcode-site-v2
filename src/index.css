@@ -106,6 +106,30 @@ body {
   animation: cat-dance 0.72s ease-in-out infinite;
 }
 
+/* Живой взгляд поверх актуального PNG Snowball в интерактивных демо. */
+.cat-gaze-eye {
+  position: absolute;
+  top: 37%;
+  width: 12.5%;
+  height: 8.5%;
+  border-radius: 50%;
+  background: #5bc3e1;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.cat-gaze-eye-left { left: 31.5%; }
+.cat-gaze-eye-right { left: 53.5%; }
+.cat-gaze-pupil {
+  position: absolute;
+  left: 38%;
+  top: 17%;
+  width: 24%;
+  height: 66%;
+  border-radius: 999px;
+  background: #092d3a;
+  transform: translate(var(--cat-gaze-x, 0px), var(--cat-gaze-y, 0px));
+  transition: transform 140ms ease-out;
+}
+
 @keyframes zzz-rise {
   0% { opacity: 0; transform: translate(0, 8px) scale(0.7) rotate(-8deg); }
   18% { opacity: 1; }

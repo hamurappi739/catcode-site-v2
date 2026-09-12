@@ -45,6 +45,26 @@ export default function Hero() {
   const { t } = useLang();
   const stageRef = useRef<HTMLDivElement>(null);
   const [par, setPar] = useState({ x: 0, y: 0 });
+  const [typed, setTyped] = useState(0);
+
+  const titleParts = [t.heroTitleA, t.heroTitleB, t.heroTitleC];
+  const titleLength = titleParts.reduce((sum, part) => sum + part.length, 0);
+
+  useEffect(() => {
+    setTyped(0);
+    const id = window.setInterval(() => {
+      setTyped((value) => {
+        if (value >= titleLength) {
+          window.clearInterval(id);
+          return value;
+        }
+        return value + 1;
+      });
+    }, 46);
+    return () => window.clearInterval(id);
+  }, [titleLength, t.heroTitleA, t.heroTitleB, t.heroTitleC]);
+
+  const revealPart = (part: string, offset: number) => part.slice(0, Math.max(0, Math.min(part.length, typed - offset)));
 
   useEffect(() => {
     const fn = (e: PointerEvent) => {
@@ -84,12 +104,12 @@ export default function Hero() {
 
           <Reveal delay={100}>
             <h1 className="mt-7 font-display text-[clamp(2rem,5.4vw,4.3rem)] font-bold leading-[1.06] tracking-tight">
-              {t.heroTitleA}
+              {revealPart(t.heroTitleA, 0)}
               <br />
-              <span className="text-cyan-neon [text-shadow:0_0_36px_rgba(46,230,255,0.4)]">{t.heroTitleB}</span>
+              <span className="text-cyan-neon [text-shadow:0_0_36px_rgba(46,230,255,0.4)]">{revealPart(t.heroTitleB, t.heroTitleA.length)}</span>
+              <br />
+              {revealPart(t.heroTitleC, t.heroTitleA.length + t.heroTitleB.length)}
               <span className="caret-blink ml-1 inline-block h-[0.8em] w-[0.09em] translate-y-[0.08em] bg-cyan-neon" />
-              <br />
-              {t.heroTitleC}
             </h1>
           </Reveal>
 
@@ -157,7 +177,7 @@ export default function Hero() {
             {/* орбита-кольцо */}
             <div
               aria-hidden
-              className="absolute left-1/2 top-[46%] h-[112%] w-[112%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.09]"
+              className="absolute left-1/2 top-1/2 h-[108%] w-[108%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.09]"
               style={{ animation: "spin-slow 60s linear infinite" }}
             >
               <span className="absolute left-[12%] top-[6%] h-1.5 w-1.5 rounded-full bg-cyan-neon/70" />
@@ -174,7 +194,7 @@ export default function Hero() {
             </div>
 
             <div
-              className="absolute bottom-[4.6rem] left-1/2 w-52 -translate-x-1/2 md:w-64"
+              className="absolute bottom-[21%] left-1/2 w-60 -translate-x-1/2 md:w-72"
               style={{
                 transform: `translateX(-50%) translate3d(${par.x * 10}px, ${par.y * 6}px, 0)`,
                 transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)",

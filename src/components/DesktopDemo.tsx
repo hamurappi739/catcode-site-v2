@@ -634,7 +634,7 @@ export default function DesktopDemo() {
 
             {/* ===== КОТ — всегда поверх окон ===== */}
             <div
-              className="absolute bottom-[2.6rem] z-[22] w-[104px] md:w-[128px]"
+              className="absolute bottom-[2.6rem] z-[22] w-[150px] md:w-[188px]"
               style={{
                 left: `${catX * 100}%`,
                 transform: `translateX(-50%)`,

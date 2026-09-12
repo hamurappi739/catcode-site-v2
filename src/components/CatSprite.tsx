@@ -73,7 +73,7 @@ export default function CatSprite({ mood = "idle", palette, follow = true, flip 
   return (
     <div
       ref={hostRef}
-      className={className}
+      className={`relative ${className ?? ""}`}
       role="img"
       aria-label="Кот CatCode"
       style={{
@@ -82,6 +82,16 @@ export default function CatSprite({ mood = "idle", palette, follow = true, flip 
       }}
     >
       <img src={src} alt="Кот CatCode" draggable={false} className="block h-auto w-full" />
+      {follow && !palette && (
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <span className="cat-gaze-eye cat-gaze-eye-left">
+            <span className="cat-gaze-pupil" />
+          </span>
+          <span className="cat-gaze-eye cat-gaze-eye-right">
+            <span className="cat-gaze-pupil" />
+          </span>
+        </div>
+      )}
     </div>
   );
 }
